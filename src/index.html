@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark-mode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="a nutritional food dashboard breakdown about calories, macro, and micro nutrients"
+    />
+    <title>Nutritional Food Dashboard</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mobile.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+      <script defer src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
+
+    <div class="grid-container">
+      <div class="theme-switch">
+        <label class="switch">
+          <input id="theme-switch" type="checkbox" />
+          <span class="slider round"></span>
+        </label>
+        <p class="theme-mode">Dark Mode</p>
+
+      </div>
+      <header class="heading-and-search-bar">
+      <h2 class="top-heading">Food nutritional Breakdown</h2>
+      <form id="search-form">
+      <input id="search" class="search-bar" type="text" placeholder="Search ex. 154 g apple" />
+      <button type="submit" id="submit-btn">
+        <img class="hidden-icon" id="rolling-loader" src="./assets/rolling-circle-loader.gif" style="height: 25px; width: 25px;" alt="rolling-circle">
+        <span class="material-icons visible-icon" id="search-icon">
+          search
+          </span>
+      </button>
+    </form>
+      <div id="match-list">
+
+      </div>
+      </header>
+      
+        <h1 class="food-item-heading"></h1>
+
+      <div class="calories-box hidden-elements">
+        <p class="calorie-amount"></p>
+        <p class="calories-text">Calories</p>
+      </div>
+
+      <div class="measurement-box hidden-elements">
+        <p class="measurement-amount"></p>
+        <p class="measurement-text">Weight</p>
+      </div>
+
+      
+
+      <div class="macro-nutrient-percentage hidden-elements">
+        <canvas id="macro-nutrient-chart">
+
+        </canvas>
+      </div>
+
+      <div class="calories-per-macro-nutrient hidden-elements">
+        <h2 class="calories-per-macro-heading">Calories per macro-nutrient</h2>
+      <div class="macro-groups">
+        <div class="calories-from-carbs-group">
+          <p class="carbs" id="calories-from-carbs-text">Calories from carbs</p>
+          <p class="carbs" id="calories-from-carbs-number"></p>
+        </div>
+
+        <div class="calories-from-protein-group hidden-elements">
+          <p class="protein" id="calories-from-protein-text">
+            Calories from protein
+          </p>
+          <p class="protein" id="calories-from-protein-number"></p>
+        </div>
+
+        <div class="calories-from-fat-group hidden-elements">
+          <p class="fat" id="calories-from-fat-text">Calories from fat</p>
+          <p class="fat" id="calories-from-fat-number"></p>
+        </div>
+      </div>
+    </div>
+
+      <div class="micro-nutrients-by-gram hidden-elements">
+        <canvas id="micro-bar-chart">
+      
+        </canvas>
+      </div>
+    
+
+    <div class="percentage-of-daily-value-box hidden-elements">
+      <div class="percent-value-and-description">
+        <h2 class="percentage-of-daily-value-heading">
+          Percentage of daily value
+        </h2>
+        <p class="value-description">all values based on 2000 calorie diet</p>
+      </div>
+
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Total Fat</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Carbs</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Protein</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Saturated Fat</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Fiber</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Sodium</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Sugar</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Calcium</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Potassium</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Cholesterol</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Vitamin A</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Vitamin C</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+      <div class="nutrient-and-percent-values">
+        <p class="nutrient-name">Vitamin D</p>
+        <p class="nutrient-value">0%</p>
+      </div>
+
+      
+    </div>
+    <div id="edamam-badge" data-color="transparent"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>
